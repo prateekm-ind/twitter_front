@@ -42,13 +42,13 @@ export class AuthLoginComponent implements OnInit {
 
     this.authservice.login(this.loginRequestPayload).subscribe( data =>{
       if(data){
-        this.isError=false;
+        //this.isError=false;
+        this.router.navigateByUrl('/home');
         this.toastr.success("Login succesful");
       }
-      else{
-        this.isError=true;
-        this.toastr.error("Login failed. Please check your credentials");
-      }
+    },
+    ()=>{
+      this.toastr.error('Login Failed! Please try Again');
     });
   }
 }

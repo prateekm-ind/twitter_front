@@ -11,13 +11,15 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AuthSignupComponent,
-    AuthLoginComponent
+    AuthLoginComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgxWebstorageModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-left',
+      preventDuplicates: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
